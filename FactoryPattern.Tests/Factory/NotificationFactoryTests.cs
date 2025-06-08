@@ -11,7 +11,7 @@ public class NotificationFactoryTests
     public void Factory_ReturnsEmailNotificationService()
     {
         // Act  
-        var service = NotificationFactory.Create(NotificationType.Email.ToString());
+        var service = NotificationFactory.Create(NotificationType.Email);
 
         // Assert  
         Assert.IsType<EmailNotificationService>(service);
@@ -20,7 +20,7 @@ public class NotificationFactoryTests
     [Fact]
     public void Factory_ReturnsSmsNotificationService()
     {
-        var service = NotificationFactory.Create(NotificationType.Sms.ToString());
+        var service = NotificationFactory.Create(NotificationType.Sms);
         Assert.IsType<SmsNotificationService>(service);
     }
 
@@ -28,7 +28,7 @@ public class NotificationFactoryTests
     public void Factory_ThrowsOnUnknownType()
     {
         var ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
-            NotificationFactory.Create(((NotificationType)999).ToString()));
+            NotificationFactory.Create(((NotificationType)999)));
 
         Assert.Contains("Unknown type", ex.Message);
     }

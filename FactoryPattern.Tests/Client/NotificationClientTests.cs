@@ -1,7 +1,5 @@
 ﻿using FactoryPattern.Core.Interfaces;
- 
-using FactoryPattern.Client.Factory;
-using Moq;
+ using Moq;
 
 namespace FactoryPattern.Tests.Client;
 
