@@ -15,7 +15,7 @@ public class NotificationClient(NotificationType type)
     //public void Notify(string message) => _service.Send(message);
 
     private readonly INotificationService _service =
-    NotificationFactory.Create(type.ToString());
+    NotificationFactory.Create(type);
 
     public void Notify(string message) => _service.Send(message);
 
